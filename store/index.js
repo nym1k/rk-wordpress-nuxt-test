@@ -21,7 +21,7 @@ export const actions = {
   async getPosts ({ state, commit }) {
     if (state.posts.length) { return }
     try {
-      let posts = await fetch('https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20&_embed=1'
+      let posts = await fetch('https://rk-wordpress-heroku-test.herokuapp.com/index.php?rest_route=/wp/v2/posts&page=1&per_page=20&_embed=1'
       ).then(res => res.json())
       posts = posts
         .filter(el => el.status === 'publish')
