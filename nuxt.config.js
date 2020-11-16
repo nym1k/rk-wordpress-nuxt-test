@@ -47,7 +47,18 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  proxy: {
+    '/api': {
+      target: 'https://rk-wordpress-heroku-test.herokuapp.com',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
