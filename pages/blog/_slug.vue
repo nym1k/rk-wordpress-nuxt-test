@@ -6,6 +6,7 @@
     v-else
     class="post individual"
   >
+    <img :src="post._embbeded['wp:featuredmedia']['0'].source_url">
     <h1>{{ post.title.rendered }}</h1>
     <small class="date">{{ post.date | dateformat }}</small>
     <section v-html="post.content.rendered" />
